@@ -1,0 +1,11 @@
+version: "3.2"
+
+services: 
+    arangodb:
+        image: arangodb
+        environment:
+            ARANGO_ROOT_PASSWORD: 1234
+        volumes: 
+            - ./dbackup:/docker-entrypoint-initdb.d/dumps/gaming-manager
+        ports: 
+            - 8555:8529
